@@ -1,0 +1,14 @@
+---
+- name: Agnostic Net Example
+  hosts: switches
+  gather_facts: false
+
+  tasks:
+        - name: run show version on remote devices
+          cli_command:
+                  command: show version
+          register: results
+
+        - name: print the results
+          debug:
+                  var: results

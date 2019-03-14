@@ -3,6 +3,7 @@ sw1 ansible_host=172.16.2.10
 sw2 ansible_host=172.16.2.20
 
 [switches:vars]
+ansible_connection=network_cli
 ansible_network_os=eos
 ansible_become=yes
 ansible_become_method=enable
