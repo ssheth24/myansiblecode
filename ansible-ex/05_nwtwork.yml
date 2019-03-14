@@ -1,0 +1,22 @@
+---
+- name: Our first network playbook
+  hosts: switches
+  gather_facts: no
+
+  vars:
+    # ansible_connection: ssh #default
+    ansible_connection: network_cli
+
+- tasks:
+  - name: get facts
+    eos_facts:
+      gather_subset: all
+
+  - name: dump config to local system
+    copy:
+      content: "{{ ansible_net_config }}"
+      dest: "/home/student/{{ inventory_hostname }}.bak"
+
+  - name: display config
+    debug:
+      var: ansible_net_config

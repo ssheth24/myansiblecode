@@ -1,0 +1,9 @@
+---
+- name: Our first playbook play one # just a name / description
+  hosts: futurama # this is the group from the inv to target
+
+  tasks:
+  - name: Move a file
+    copy:
+      src: /home/student/ansible-ex/ansible.fake
+      dest: /tmp/ansible.fake

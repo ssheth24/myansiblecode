@@ -1,0 +1,18 @@
+---
+- name: Deploy software to target servers
+  hosts: futurama
+
+
+ 
+  vars:
+    tobeornot: absent       
+
+  tasks:
+
+  - name: User apt to install software
+    apt:
+      state: "{{ tobeornot }}" ##state of software
+      name: figlet ##software to install
+      update_cache: yes
+    become: yes
+    #when: ansible_architecture != "x86_64"
