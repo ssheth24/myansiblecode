@@ -17,7 +17,7 @@ how to install python and python3 using apt.
 
 ## Built With
 
-* [Python](https://www.python.org/) - The coding language used
+* [Python](https://www.python.org/)
 
 ## Authors
 
